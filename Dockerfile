@@ -15,6 +15,7 @@ RUN dnf update -y &&                            \
         gcc-c++                                 \
         libnsl                                  \
         mesa-libGL-devel                        \
+        ninja-build                             \
         vim-common                              \
         findutils                               \
         git &&                                  \
@@ -34,4 +35,3 @@ RUN ./miniconda.sh -b -p $CONDA_HOME &&                             \
     echo ". \$CONDA_HOME/etc/profile.d/conda.sh" >> ~/.bashrc &&    \
     echo "conda activate base" >> ~/.bashrc &&                      \
     rm miniconda.sh
-
