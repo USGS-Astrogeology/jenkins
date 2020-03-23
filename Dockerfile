@@ -14,9 +14,12 @@ RUN yum update -y &&                            \
         curl                                    \
 	vim-common				\
 	findutils				\
-        mesa-libGL-devel                        \
-        git &&                                  \
+        mesa-libGL-devel &&                     \
     yum clean all
+    
+# Git v2
+RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm &&	\
+    yum install -y git2u-all
 
 # Install conda
 ADD https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh   \
