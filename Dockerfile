@@ -18,7 +18,8 @@ RUN yum update -y &&                            \
     yum clean all
     
 # Git v2
-RUN yum install -y https://centos7.iuscommunity.org/ius-release.rpm &&	\
+RUN yum remove -y git &&                                                \
+    yum install -y https://centos7.iuscommunity.org/ius-release.rpm &&	\
     yum install -y git2u-all
 
 # Install conda
